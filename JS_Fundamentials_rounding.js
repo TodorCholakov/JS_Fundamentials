@@ -1,4 +1,4 @@
-//Finished
+//Not finished
 
 function solve (param1) {
     let param = Number(param1)
