@@ -8,6 +8,5 @@ function solve (param1) {
         console.log ("no")
        }
     }
-       
-
+    
 solve (2003)
