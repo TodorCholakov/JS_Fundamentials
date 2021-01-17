@@ -36,3 +36,24 @@ function dayOfTheWeek (param1){
     console.log (param1>5 ? "Weekend" : "Worcday");
 } 
 dayOfTheWeek(4)
+
+//"Хойстване" - функцията може и да е след кода
+
+//Array 
+let myArr = [];
+myArr.push('aaa') //add element to the end
+myArr.push('bbbb')//add element to the end
+//myArr.pop() //remove last element of array
+//console.log (myArr)
+myArr.shift() //remove the first element
+myArr.unshift('aksdflasdjflksadf')//add element at the beginning of array
+//console.log (myArr)
+
+
+//let filtered = arr.filter(x=>x!==2)
+
+let arr1 = [23, "2", 3, 4, 5, 6, 7];
+let a = arr1.map(Number);
+let sorted = a.sort((a, b)=>a-b)
+let sum = a.reduce((a, b)=>a+b)
+console.log (sum);

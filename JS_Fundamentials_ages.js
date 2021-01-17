@@ -1,4 +1,4 @@
-//Finished
+//Finished 100/100
 
 function solve (param1) {
     let param = Number(param1)
@@ -12,6 +12,8 @@ function solve (param1) {
         console.log('adult')
     } else if (param>=66) {
         console.log('elder')
+    } else {
+        console.log('out of bounds')
     }
 }
 solve (20)

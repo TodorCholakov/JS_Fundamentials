@@ -1,4 +1,4 @@
-//Finished 91/100
+//Finished 100/100
 
 function solve (param1, param2, param3) {
     let param = Number(param1)
@@ -33,7 +33,7 @@ function solve (param1, param2, param3) {
     }
     if (param2=="Regular") {
             if (param>=10 && param<=20 ) {
-            discount=5;
+            discount=0.05;
             } else {
             discount=0;
             }
@@ -48,4 +48,4 @@ function solve (param1, param2, param3) {
 }
 console.log (`Total price: ${res.toFixed(2)}`)}
 
-solve (40, "Regular", "Saturday")
+solve (40, "Regular", "Saturday");
