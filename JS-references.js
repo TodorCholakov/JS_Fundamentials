@@ -57,3 +57,23 @@ let a = arr1.map(Number);
 let sorted = a.sort((a, b)=>a-b)
 let sum = a.reduce((a, b)=>a+b)
 console.log (sum);
+
+//asc table букви отговарящи на номер
+//fromCharCode()
+
+//clip path generator - изрязва снимка
+//box shadow generator
+//linear gradent generator  
+// body,* - селектира всеки таг без before и after
+
+/*html {
+    box-sizing: border-box;
+}
+body, 
+*,
+*:after,
+*:before{
+    box-sizing: inherit;
+}*/
+
+//CTR + U - показва кода
