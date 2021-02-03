@@ -4,6 +4,7 @@ function solve (arr, param1){
   for (let i =0; i<param1; i++){
    arr.push(arr.shift());
   }
+  
   for (let a of arr){
   res+=a+' ';
 }

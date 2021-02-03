@@ -77,3 +77,7 @@ body,
 }*/
 
 //CTR + U - показва кода
+
+//width: fit-content;
+//background: linear-gradient(0, 0 ,0 ,0.5)
+//css gradient with image

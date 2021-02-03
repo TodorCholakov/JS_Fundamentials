@@ -67,3 +67,36 @@ solve([
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for (let i=0; i<arr.length; i++){
+    let count=0;
+    for(let j=0; j<arr.length; j++){
+        if (arr[i]==arr[j]){
+            count++; 
+    }
+    if (tempCount<count){
+        while(res.length>0){
+            res.pop()
+        }
+        tempCount=count;
+        for (r=0; r<tempCount; r++){
+            res.push(arrTemp[i])
+
+        }
+    } 
+}

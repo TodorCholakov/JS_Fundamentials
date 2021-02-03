@@ -1,23 +1,22 @@
+//OK 100/100
 function solve (arr){
+    let isEqual=false;
+for (let i = 0; i < arr.length; i++) {
     let sumLeft =0;
     let sumRight =0;
-for (let index = 0; index <= arr.length; index++) {
-    if (index = arr.length ||  index==0){
-        console.log(0)
-    } else {
-        for (let i=index; i>=0; i--){
-            sumLeft+=arr[i]
-            console.log (sumLeft)
-        }
-        for (let a=index; a<=arr.length; a++){
-            sumRight+=arr[a]
-            console.log (sumRight)
-        }
-        if (sumLeft==sumRight){
-            console.log (OK);
-        } 
+    for (let r=i+1; r<arr.length; r++){
+        sumRight+=arr[r];
+    }
+    for (let l=0; l<i; l++){
+        sumLeft+=arr[l]
+    }
+    if (sumLeft==sumRight){
+        isEqual=true;
+        console.log(i)
     }
     
 }
-}
+if (isEqual==false){
+    console.log("no")
+}}
 solve ([1, 2, 3, 3])
