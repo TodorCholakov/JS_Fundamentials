@@ -1,4 +1,4 @@
-//OK 88/100
+//OK 100/100
 function addAndSubstract (param1, param2, param3){
     param1 = Number(param1);
     param2 = Number(param2);
