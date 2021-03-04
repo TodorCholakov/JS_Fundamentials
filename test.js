@@ -1,24 +1,20 @@
 
 
-function solve (arr){
-    let seq = []
-    for (let i=0; i<arr.length; i++){
-        let element = arr[i]
-        let curSec = [element]
-        for (let a=i+1; a<arr.length; a++){
-            if (element==arr[a]){
-                curSec.push(element)
-            } else {
-                break;
-            }
-        }
-        if (seq.length<curSec.length){
-            seq=curSec
-        }
-    }
-    console.log (seq.join(' '))
+function solve (n, k){
+  
+  let sequnece = [1];
+ for (let a=0; a<n; a++){
+     let startIndex = Math.max (0, a-k);
+     let innerSequence = sequnece.slice(startIndex, a);
+     let sum=0;
+     for (let j =0; j<innerSequence.length; j++){
+        sum+=innerSequence[j];
+     }
+     sequnece[a]= sum;
+ }
+  console.log (sequnece.join(" "))
 }
-solve([1, 2, 3, 3, 2, 1, 2, 2, 2, 2, 2, 2, 2])
+solve(6, 3)
 //solve([0, 1, 1, 5, 2, 2, 6, 3, 3])
 
 

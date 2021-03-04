@@ -8,23 +8,25 @@ function passwordValidator (param){
             counter++;
             letterCount++
         } 
-        if (65<=param[a].charCodeAt() && param[a].charCodeAt()<=122){
+        else if (65<=param[a].charCodeAt() && param[a].charCodeAt()<=90){
             letterCount++
-        } else if (48>param[a].charCodeAt() && param[a].charCodeAt()<=57 || 65<=param[a].charCodeAt() && param[a].charCodeAt()<=122){
-         //   console.log (param[a].charCodeAt())
+        }
+        else if (97<=param[a].charCodeAt() && param[a].charCodeAt()<=122){
+            letterCount++;
+        }
+        else {
             console.log (`Password must consist only of letters and digits`);
             break;
-        }   
+        }
     }
-    if (param.length>9|| param.length<6) {
+    if (param.length>10 || param.length<6) {
         console.log ("Password must be between 6 and 10 characters")
     } 
     if (counter<2) {
         console.log ("Password must have at least 2 digits")
      } 
-     if (letterCount<10 && counter>2){
+     if (letterCount<=10 && counter>=2 && letterCount>=6){
          console.log (`Password is valid`)
      }
-
 }
 passwordValidator ('Pa$s$s')
