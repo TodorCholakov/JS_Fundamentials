@@ -1,34 +1,38 @@
 function solve(input) {
-	let myObj = {};
-	let tempArr = [];
-	input.sort((a, b) => a.localeCompare(b));
+	let myObj = {}
 	for (const el of input) {
-		let arrSplit = el.split(' -> ');
-		let key = arrSplit[0];
-		let value = arrSplit[1];
-		if (!myObj.hasOwnProperty(key)) {
-			myObj[key] = [ value ];
+		let [name, number] = el.split(" -> ");
+	//	console.log (name, number)
+		if (!myObj.hasOwnProperty(name)){
+			myObj[name] = [number]
 		} else {
-			if (!myObj[key].includes(value)) {
-				myObj[key].push(value);
+			if (!myObj[name].includes(number)){
+				myObj[name].push(number)
+			} else {
+				continue;
 			}
+			
 		}
 	}
-	for (const key in myObj) {
-	//	console.log(`${key}`);
-		let arr = Object.values(myObj[key]);
-		for (const line of arr) {
-			tempArr.push(line);
-		}
-		tempArr.sort((a, b) => a.localeCompare(b));
-		for (const iterator of tempArr) {
-	//		console.log(`-- ${iterator}`);
-		}
-		tempArr = [];
+let sorted = Object.entries(myObj).sort(sorted1)
+	
+	//console.log (myObj)
+function sorted1 (a, b) {
+	//console.log (a[0])
+		
+        let res = a[0].localeCompare(b[0])
+return(res)
 	}
-   console.log (myObj)
-   
+	//console.log (sorted)
+	for (const iterator of sorted) {
+		console.log (iterator[0])
+		for (const el1 of iterator[1]) {
+			console.log (`-- ${el1}`)
+		}
+	}
+	
 }
+
 
 solve([
    'SoftUni -> AA12345',
