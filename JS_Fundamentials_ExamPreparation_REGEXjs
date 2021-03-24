@@ -1,0 +1,45 @@
+function solve(data){
+    let regex = /@#+[A-Z][a-zA-Z0-9]{5,}[A-Z]*/
+    var regexNum = /\d+/g;
+    let strNum="";
+    let num = data.shift()
+    //console.log (num)
+   
+    for (const line of data) {
+        let strNum="";
+        let matchNum;
+        while (matchNum = regexNum.exec(line)) {
+          strNum+=matchNum[0];
+
+        }
+       if (strNum==""){
+        strNum='00'
+       } else {
+        strNum=strNum
+       }
+       
+        let match = regex.exec(line)
+     
+       
+    
+        if (match){
+           console.log (`Product group: ${strNum}`)
+           strNum=""
+        } else {
+            console.log ("Invalid barcode")
+            strNum=""
+        }
+       
+    }
+    }
+
+
+
+solve (
+    [ 
+        '3',
+        '@#FreshFisH@#',
+        '@###Brea0D@###',
+        '@##Che46sE@##'
+     ]
+)
