@@ -1,36 +1,31 @@
 function solve(data){
-    let regex = /@#+[A-Z][a-zA-Z0-9]{5,}[A-Z]*/
-    var regexNum = /\d+/g;
-    let strNum="";
+    let regex = /@#+[A-Z]([a-z]+|[A-Z]+|[0-9]+){4,}[A-Z]/
+    var regexNum = /\d+/g
+    let productGroup = ""
     let num = data.shift()
-    //console.log (num)
-   
-    for (const line of data) {
-        let strNum="";
-        let matchNum;
-        while (matchNum = regexNum.exec(line)) {
-          strNum+=matchNum[0];
-
-        }
-       if (strNum==""){
-        strNum='00'
-       } else {
-        strNum=strNum
-       }
-       
-        let match = regex.exec(line)
-     
-       
     
-        if (match){
-           console.log (`Product group: ${strNum}`)
-           strNum=""
+
+
+   for (let i=0; i<data.length; i++){
+    let match = data[i].match(regex);
+    let matchNum = data[i].match(regexNum);
+        if(match){
+            //console.log(data[i])
+            if(matchNum){
+                for (const num of matchNum) {
+                    productGroup+=num;
+                }
+                console.log(`Product group: ${productGroup}`)
+                productGroup = ""
+            } else {
+                console.log(`Product group: 00`)
+            }
+            
         } else {
-            console.log ("Invalid barcode")
-            strNum=""
+            console.log(`Invalid barcode`)
         }
-       
-    }
+    
+        }
     }
 
 
