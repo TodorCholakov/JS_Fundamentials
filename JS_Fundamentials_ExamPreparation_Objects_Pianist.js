@@ -1,96 +1,87 @@
 function solve(data){
-    let obj = {}
-    let numCars = Number(data.shift())
-   // console.log (numCars)
-    for (let i=0; i<numCars; i++){
-        let [carName, distance, fuel] = data[i].split("|")
-       // console.log (carName, distance, fuel)
-       distance = Number(distance)
-       fuel = Number(fuel)
-       obj[carName]={distance, fuel}
-    }
-    data.splice(0, numCars)
-    //console.log (data)
-    for (const line of data) {
-        let [command, carName, ...tokens] = line.split(" : ")
-        //console.log (command, carName, tokens)
-        if (command==="Drive"){
-            Drive (obj, command, carName, tokens)
-        } else if (command==="Refuel"){
-            Refuel (obj, command, carName, tokens)
-        } else if (command==="Revert"){
-            Revert (obj, command, carName, tokens)
-        } else if (command==="Stop"){
-            break;
-        }
-    }
+    let num = Number(data.shift())
+    //console.log(num)
+    let obj ={}
+  for (let i =0; i<num; i++){
+      let [piece, composer, key] = data[i].split("|")
+      //console.log (piece, composer, key)
+      obj[piece] = {composer, key}
+  }
+  data.splice(0, num)
+  //console.log (obj)
+  for (const line of data) {
+      let [command, ...tokens] = line.split("|")
+      if (command==="Add"){
+          Add(obj, command, tokens)
+      } else if (command==="Remove"){
+        Remove(obj, command, tokens)
+      } else if (command==="ChangeKey"){
+        ChangeKey(obj, command, tokens)
+      } else if (command==="Stop"){
+        break;
+      }
+  }
 
-
-    function Drive (obj, command, carName, tokens){
-        let distanceDrived = Number(tokens[0])
-        let fuelNeeded = Number(tokens[1])
-        if (obj[carName].fuel<=fuelNeeded){
-            console.log ("Not enough fuel to make that ride")
+    function Add (obj, command, tokens){
+        let pieceF = tokens[0]
+        let composer = tokens[1]
+        let key = tokens[2]
+        if (obj.hasOwnProperty(pieceF)){
+            console.log (`${pieceF} is already in the collection!`)
         } else {
-            obj[carName].fuel -= fuelNeeded
-            obj[carName].distance += distanceDrived
-            console.log (`${carName} driven for ${distanceDrived} kilometers. ${fuelNeeded} liters of fuel consumed.`)
-        }
-        if (obj[carName].distance>=100000){
-            console.log (`Time to sell the ${carName}!`)
-            delete obj[carName]
+            obj[pieceF] = {composer, key}
+            console.log (`${pieceF} by ${composer} in ${key} added to the collection!`)
         }
     }
 
-    function Refuel (obj, command, carName, tokens){
-        let refFuel = Number(tokens[0])
-        let oldValue = obj[carName].fuel
-        let refil = Math.min(75, obj[carName].fuel+refFuel)
-        console.log(`${carName} refueled with ${refil-oldValue} liters`)
-        obj[carName].fuel=refil;
-    }
-
-    function Revert (obj, command, carName, tokens){
-        let decKm = Number(tokens[0])
-        if ((obj[carName].distance-decKm)<10000){
-            obj[carName].distance = 10000;
+    function Remove (obj, command, tokens){
+        let pieceF = tokens[0]
+        if (obj.hasOwnProperty(pieceF)){
+            console.log (`Successfully removed ${pieceF}!`)
+            delete obj[pieceF]
         } else {
-            obj[carName].distance-=decKm
-            console.log (`${carName} mileage decreased by ${decKm} kilometers`)
+            console.log (`Invalid operation! ${pieceF} does not exist in the collection.`)
         }
     }
 
-    let sorted = Object.entries(obj).sort(SortFunc);
+    function ChangeKey (obj, command, tokens){
+        let pieceF = tokens[0]
+        let pieceNewF = tokens[1]
+        if (obj.hasOwnProperty(pieceF)){
+            obj[pieceF].key = pieceNewF
+            console.log (`Changed the key of ${pieceF} to ${pieceNewF}!`)
+        } else {
+            console.log (`Invalid operation! ${pieceF} does not exist in the collection.`)
+        }
+    }
+
+    let sortedObj = Object.entries(obj).sort(SortFunc);
 
     function SortFunc (a, b){
-        
-        let [aCarname, aCarInfo] = a
-        let [bCarname, bCarInfo] = b
-       
-        let sortedMil = bCarInfo.distance - aCarInfo.distance
-        if(sortedMil===0){
-            return bCarname.localeCompare(aCarname)
+        let [aName, aInfo] = a
+        let [bName, bInfo] = b
+        let sorted = aName.localeCompare(bName)
+        if (sorted===0){
+            return aInfo[0].localeCompare(bInfo[0])
         }
-        return sortedMil
+        return sorted
     }
-    for (const line of sorted) {
-        //console.log (line)
-        console.log (`${line[0]} -> Mileage: ${line[1].distance} kms, Fuel in the tank: ${line[1].fuel} lt.`)
+    for (const line of sortedObj) {
+       console.log (`${line[0]} -> Composer: ${line[1].composer}, Key: ${line[1].key}`) 
     }
 }
 
 solve (
     [
-        '4',
-        'Lamborghini Veneno|11111|74',
-        'Bugatti Veyron|12345|67',
-        'Koenigsegg CCXR|67890|12',
-        'Aston Martin Valkryie|99900|50',
-        'Drive : Koenigsegg CCXR : 382 : 82',
-        'Drive : Aston Martin Valkryie : 99 : 23',
-        'Drive : Aston Martin Valkryie : 2 : 1',
-        'Refuel : Lamborghini Veneno : 40',
-        'Revert : Bugatti Veyron : 2000',
+        '3',
+        'Fur Elise|Beethoven|A Minor',
+        'Moonlight Sonata|Beethoven|C# Minor',
+        'Clair de Lune|Debussy|C# Minor',
+        'Add|Sonata No.2|Chopin|B Minor',
+        'Add|Hungarian Rhapsody No.2|Liszt|C# Minor',
+        'Add|Fur Elise|Beethoven|C# Minor',
+        'Remove|Clair de Lune',
+        'ChangeKey|Moonlight Sonata|C# Major',
         'Stop'
       ]
       

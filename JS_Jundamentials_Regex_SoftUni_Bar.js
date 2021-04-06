@@ -3,7 +3,7 @@ function solve (arr){
     let result = "";
     let total = 0;
     let temp = 0;
-    let regex = /%(?<name>[A-Z][a-z]+)%([^\|\$\%\.]+)?<(?<nameArt>[A-Za-z]+)>[|](?<count>\d+)[|](?<price>\d+.\d+)[$]/
+    let regex = /%(?<name>[A-Z][a-z]+)%([^\|\$%\.]+)?<(?<nameArt>[\w]+)>([^\|\$%\.]+)?\|(?<count>[\d]+)\|(?<option>[^\$\%\.\|\d+]+)?(?<price>[0-9]+(\.[0-9]+)?)\$/
     for (const line of arr) {
         let match = regex.exec(line)
        
@@ -20,7 +20,6 @@ function solve (arr){
 
 
 solve ([
-    %George%<Croissant>|2|10.3$
     '%InvalidName%<Croissant>|2|10.3$',
     '%Peter%<Gum>1.3$',
     '%Maria%<Cola>|1|2.4',
