@@ -9,10 +9,8 @@ function solve (arr1, arr2){
       let sumPower = power*2+1
       if (firstel<0){
         sumPower= sumPower+firstel 
-        firstel=0;
-        
-      } 
-        
+        firstel=0; 
+      }  
         arr1.splice(firstel, sumPower)
         a=0;
      }
@@ -21,13 +19,8 @@ function solve (arr1, arr2){
   for (let b=0; b<arr1.length; b++){
       sum+=arr1[b]
   }
-//console.log (arr1.reduce((a, b) => a + b));
 console.log (sum)
 }
-
 solve([1, 2, 2, 4, 2, 2, 2, 9],
    [4, 2]
-   
-   
-   
    )

@@ -1,4 +1,3 @@
-//OK 88/100
 function solve (param1, param2, param3, students){
     let count = 1;
 let hoursum = param1+param2+param3;

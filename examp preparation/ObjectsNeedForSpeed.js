@@ -3,7 +3,6 @@ function solve(data){
     let numbersOfCars = data.shift(data[0])
     for(let i=0; i<numbersOfCars; i++){
         let [carName, mileage, fuel] = data.shift(data[i]).split("|")
-       
         mileage=Number(mileage)
         fuel=Number(fuel)
         cars[carName]={mileage, fuel}
@@ -24,8 +23,6 @@ function solve(data){
                   let a =  Object.keys(cars[car1])
                   console.log(`Time to sell the ${car1}!`)
                   delete cars[car1]
-                   
-                    
                 }
               } else if (cars[car1].fuel<fuel1){
                 console.log("Not enough fuel to make that ride")
@@ -49,13 +46,10 @@ function solve(data){
         } else {
             console.log (`${car1} mileage decreased by ${mileage1} kilometers`)
         }
-        
     } else if (command == "Stop"){
         break;
     }
-    
 }
-//console.log (cars)
 let sortedCars = Object.entries(cars).sort(sortCars)
 
     function sortCars (a, b){
@@ -64,15 +58,11 @@ let sortedCars = Object.entries(cars).sort(sortCars)
         let res = bmileage.mileage - amileage.mileage
 return(res)
     }
-    //console.log (typeof(sortedCars))
     for (const el of sortedCars) {
         let [res1, res2, res3] = el
-       // console.log (res1, res2)
         console.log (`${res1} -> Mileage: ${res2.mileage} kms, Fuel in the tank: ${res2.fuel} lt.`)
-
     }
 }
-
 solve(
     [
         "4",

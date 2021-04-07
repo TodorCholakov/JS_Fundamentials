@@ -1,10 +1,8 @@
-//Not OK 100/100
 function solve (arr){
    let names = [];
    let isGoingArr = []
    for (let name of arr) {
       let tempArr = name.split(" ");
-      
       if (tempArr[2]=="not"){
          if(names.includes(tempArr[0])){
             for (let a=0; a<names.length; a++){
@@ -26,9 +24,6 @@ function solve (arr){
    for (let name of names) {
       console.log (name)
    }
-   
-   
-
 }
 solve(
    ['Tom is going!',
@@ -36,6 +31,4 @@ solve(
    'Tom is going!',
    'Garry is going!',
    'Jerry is going!']
-   
-   
 )

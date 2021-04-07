@@ -5,7 +5,6 @@ function solve(data){
     console.log(matches)
    for (let i=0; i<matches.length; i++){
     matches[i] = matches[i].replace(/[@#]/g, '')
-   // console.log (el)
    }
     for (const el of matches) {
         console.log(el)
@@ -13,7 +12,6 @@ function solve(data){
         let b = el.substring(el.length/2).split("").reverse().join("");
         console.log (a)
         console.log (b)
-        //if (el.splice(0, el.length/2)==el())
     }   
     console.log (matches)
 }

@@ -27,5 +27,4 @@ function solve (param1, param2, param3){
          console.log (`You produce ${resPercent} percent less biscuits.`);
       }
 }
-
 solve (65, 12, 26000)

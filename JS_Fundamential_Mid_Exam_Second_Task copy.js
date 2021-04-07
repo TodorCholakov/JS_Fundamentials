@@ -1,14 +1,10 @@
 function solve (param1){
    let arr = param1.shift();
    let commands;
-// console.log (arr)
-// console.log (param1)
    for (let a=0; a<param1.length; a++) {
       commands = param1[a].split(" ");
- // console.log (commands)
       if (commands[0]=="Add"){
          arr.push(Number(commands[1]))
-//         console.log (arr)
       } else if (commands[0]=="Remove"){
          for (let d=0; d<arr.length; d++){
             if (arr[d]==commands[1]){
@@ -16,7 +12,6 @@ function solve (param1){
                break;
             }
          }
-//         console.log (arr)
       } else if (commands[0]=="Replace"){
          for (let b=0; b<arr.length; b++){
             if (arr[b]==commands[1]){

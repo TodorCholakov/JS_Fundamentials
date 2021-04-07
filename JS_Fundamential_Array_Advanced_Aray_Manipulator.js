@@ -1,4 +1,3 @@
-//Not OK 100/100
 function solve (arr, commands){
    for (const line of commands){
       let [comm, index, ...elements] = line.split(' ');
@@ -24,7 +23,6 @@ function solve (arr, commands){
       } else if (comm=='print'){
          console.log (`[ ${arr.join(", ")} ]`);
       }
-
    }
 }
 solve(

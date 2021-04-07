@@ -1,6 +1,5 @@
 function solve(data){
     let citiesMap = {};
-    
     while (data[0]!=="Sail"){
         let [city, population, gold] = data.shift().split("||")
         gold=Number(gold)
@@ -12,7 +11,6 @@ function solve(data){
             citiesMap[city].population +=population; 
             citiesMap[city].gold +=gold; 
         }
-
         console.log (citiesMap)
     }
     console.log (citiesMap)

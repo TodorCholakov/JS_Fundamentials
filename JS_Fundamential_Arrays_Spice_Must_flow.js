@@ -1,4 +1,3 @@
-//OK 88/100
 function solve (param1){
     let day=0;
     let input = Number(param1);
@@ -9,7 +8,6 @@ function solve (param1){
         consumed = input-26;
         input-=10        
         total+=consumed;
-      
     }
     if (total<26){
         console.log(day)
@@ -18,7 +16,5 @@ function solve (param1){
         console.log(day)
         console.log(total-26)
     }
-    
 }
-
 solve (111)

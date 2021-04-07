@@ -1,8 +1,6 @@
-//OK 100/100
 function solve (param1){
   let wagons = param1.shift().split(" ").map(Number);
   let capacity = Number(param1.shift())
-
   for (const line of param1){
      let [comm, n] = line.split(" ");
      if (comm=="Add"){

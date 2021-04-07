@@ -1,6 +1,4 @@
-//OK 100/100
 function solve (arr1){
-
   arr1.sort((a, b) => b-a );
   let res = []
   let b=0;
@@ -14,5 +12,4 @@ function solve (arr1){
  }
  console.log (res1.join(" "))
 }
-
 solve([1, 21, 3, 52, 69, 63, 31, 2, 18, 94])
