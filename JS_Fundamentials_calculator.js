@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (param1, operator, param2){
     let res;
     let stringify = `${param1}${operator}${param2}`

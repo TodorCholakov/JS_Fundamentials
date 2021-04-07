@@ -9,9 +9,6 @@ function solve (str, str1){
         console.log (`${str} not found!`)
         }
 }
-   
-
-
 solve ('Javascript',
 ' is the best programming language'
 )

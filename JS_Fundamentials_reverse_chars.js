@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (a, b, c){
     let stringify = `${a}${b}${c}`
     let reverse = stringify.split("").reverse().join(" ");

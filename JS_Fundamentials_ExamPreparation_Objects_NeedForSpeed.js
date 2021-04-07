@@ -24,8 +24,6 @@ function solve(data){
             break;
         }
     }
-
-
     function Drive (obj, command, carName, tokens){
         let distanceDrived = Number(tokens[0])
         let fuelNeeded = Number(tokens[1])

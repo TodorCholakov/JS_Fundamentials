@@ -1,5 +1,3 @@
-//Not finished
-
 function solve (param1, param2) {
     let dot;
     if (param2>15){

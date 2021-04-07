@@ -1,4 +1,3 @@
-//OK 52/100
 function solution(param)
 {
 let tmp = 0;

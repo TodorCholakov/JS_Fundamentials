@@ -1,5 +1,3 @@
-//Finished 100/100
-
 function solve (param1, param2, param3) {
     let param = Number(param1)
     let res, discount;

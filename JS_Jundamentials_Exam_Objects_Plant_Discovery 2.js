@@ -1,4 +1,3 @@
-
 function solve (arr){
     let obj ={}
     let num = Number(arr.shift())

@@ -1,7 +1,6 @@
 function solve (data){
    for (const str of data){
       let arr = str.split(" |")
-     /// console.log (arr)
       let lattitude = Number(arr[1])
       let longitude = Number(arr[2])
     let object = {

@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (arr, param1){
     let res =[];
   for (let i =0; i<param1; i++){

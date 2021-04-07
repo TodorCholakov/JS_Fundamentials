@@ -13,6 +13,5 @@ result.push(str.substring(upperIndex))
 console.log(result.join(", ")) 
 }
 
-
 solve ('SplitMeIfYouCanHaHaYouCantOrYouCan'
 )

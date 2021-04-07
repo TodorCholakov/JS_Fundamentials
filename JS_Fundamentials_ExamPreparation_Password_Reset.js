@@ -38,10 +38,6 @@ function solve(data){
                 
     }
    }
-
-
-
-
 solve (
     [
     'Siiceercaroetavm!:?:ahsott.:i:nstupmomceqr ',

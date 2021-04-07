@@ -2,9 +2,6 @@ function solve (data){
    let arr = []
    let myObj = {}
    let dicRow ={}
-   
-   
-
   for (const line of data) {
      dicRow = JSON.parse(line);
 
@@ -13,9 +10,6 @@ function solve (data){
      
      }
   }
- 
-
-
 let sorted = Object.keys(myObj)
     .sort()
     .reduce((acc, key) => ({

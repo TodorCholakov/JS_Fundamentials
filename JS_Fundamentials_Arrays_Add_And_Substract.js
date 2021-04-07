@@ -1,5 +1,3 @@
-//100/100
-
 function solve (param1) {
     let sum1 = 0;
     let sum2 = 0;

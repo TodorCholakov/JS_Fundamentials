@@ -1,4 +1,3 @@
-//OK 100/100
 function smallestNumber (param1, param2){
     param1 = param1.charCodeAt()
     param2 = param2.charCodeAt()

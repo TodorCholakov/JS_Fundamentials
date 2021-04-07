@@ -1,4 +1,3 @@
-//OK 52/100
 function loadingBar (param){
     let arr=[".",".",".",".",".",".",".",".",".","."]
     if (param==100){

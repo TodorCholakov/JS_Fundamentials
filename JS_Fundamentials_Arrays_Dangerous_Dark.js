@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (arr){
     let health=100;
     let newArr=[];

@@ -1,4 +1,3 @@
-//OK 52/100
 function solution(param1, param2){
    let res1 = 1;
    let res2 = 1;
@@ -11,5 +10,4 @@ function solution(param1, param2){
       let res = (res1/res2).toFixed(2)
       console.log (res)
   }
- 
  solution(5, 2); 

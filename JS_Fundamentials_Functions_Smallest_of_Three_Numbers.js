@@ -1,4 +1,3 @@
-//OK 100/100
 function smallestNumber (param1, param2, param3){
     param1 = Number(param1);
     param2 = Number(param2);

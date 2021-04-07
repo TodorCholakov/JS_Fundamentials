@@ -1,5 +1,3 @@
-//Finished 100/100
-
 function solve (param1) {
     let num1, resTemp, res="";
    num1 = Number(param1)

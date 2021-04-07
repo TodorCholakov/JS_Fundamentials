@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (arr1, arr2){
     let res = [];
     let comp;

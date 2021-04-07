@@ -1,5 +1,3 @@
-//OK 100/100
-
 function solve (param1) {
     let res;
     let  userName= param1[0]

@@ -10,7 +10,6 @@ function solve (arr){
       myObj[name].push(...sArr)
    }
 }
-
 let sorted = Object.values(myObj).sort((a,b)=> average(a,b))
 
    function average (a, b){

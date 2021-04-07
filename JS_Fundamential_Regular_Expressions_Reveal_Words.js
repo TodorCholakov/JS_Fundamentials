@@ -1,4 +1,3 @@
-//Not OK 100/100
 function solve (input){
    let wordL = input[0].length
    let str = input[1]

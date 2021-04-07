@@ -1,4 +1,3 @@
-//OK 100/100
 function addAndEvenSum (param1){
     let param = param1.toString()
     let evenSum = 0;

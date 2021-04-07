@@ -1,4 +1,3 @@
-//Not 100/100
 function solve (arr, param1) {
     for (let i = 0; i<arr.length; i++){
         for (let a = i+1; a<arr.length; a++){

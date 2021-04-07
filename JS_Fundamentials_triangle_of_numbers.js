@@ -1,4 +1,3 @@
-//Finished 100/100
 
 function solve (param1) {
     let num1, res="";

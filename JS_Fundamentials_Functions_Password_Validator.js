@@ -1,4 +1,3 @@
-//OK 52/100
 function passwordValidator (param){
         let pasLength = param.length;
         let total = 0;

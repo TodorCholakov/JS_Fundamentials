@@ -1,5 +1,3 @@
-//OK 100/100
-
 function solve (arr){
     let tempArr = []
     let tempArr1 = []

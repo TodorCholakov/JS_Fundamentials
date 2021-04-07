@@ -7,10 +7,7 @@ function solve (data){
       if (!myMap.has(element)){
          myMap.set(element, 0)
       }
-        // myMap[element]++
          myMap.set(element, myMap.get(element)+1)
-      
-      
    });
    return Array.from(myMap.keys())
    .filter(x=>myMap.get(x)%2!==0)

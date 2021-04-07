@@ -1,5 +1,3 @@
-//Finished 100/100
-
 function solve (param1) {
     let param = Number(param1)
     if (param>=0 && param<=2){

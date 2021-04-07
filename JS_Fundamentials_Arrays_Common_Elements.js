@@ -1,5 +1,3 @@
-//100/100
-
 function solve (param1, param2) {
     for (let a of param1){
         for (let b of param2) {

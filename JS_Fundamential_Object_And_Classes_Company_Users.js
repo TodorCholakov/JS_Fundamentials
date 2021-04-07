@@ -2,7 +2,6 @@ function solve(input) {
 	let myObj = {}
 	for (const el of input) {
 		let [name, number] = el.split(" -> ");
-	//	console.log (name, number)
 		if (!myObj.hasOwnProperty(name)){
 			myObj[name] = [number]
 		} else {
@@ -15,15 +14,10 @@ function solve(input) {
 		}
 	}
 let sorted = Object.entries(myObj).sort(sorted1)
-	
-	//console.log (myObj)
 function sorted1 (a, b) {
-	//console.log (a[0])
-		
         let res = a[0].localeCompare(b[0])
 return(res)
 	}
-	//console.log (sorted)
 	for (const iterator of sorted) {
 		console.log (iterator[0])
 		for (const el1 of iterator[1]) {
@@ -32,8 +26,6 @@ return(res)
 	}
 	
 }
-
-
 solve([
    'SoftUni -> AA12345',
    'SoftUni -> CC12344',

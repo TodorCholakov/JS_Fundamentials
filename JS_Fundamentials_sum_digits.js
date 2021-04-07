@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (param){
     let temp = 0
     let stringify = param.toString().split("");

@@ -1,4 +1,3 @@
-//OK 100/100
 function solve (arr){
     let isEqual=false;
 for (let i = 0; i < arr.length; i++) {
